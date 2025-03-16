@@ -1,0 +1,92 @@
+/* Seniorengerechtes CSS für Symptomvorhersage-Container */
+.container {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Form-Styling */
+form {
+  padding: 24px;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 20px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:disabled {
+  background-color: #a0c8f0;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #3278d4;
+}
+
+/* Fehlermeldung */
+.error-message {
+  color: #d93025;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* Vorhersage-Ergebnis-Styling */
+.prediction-result {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #e7f3ff;
+  border: 2px solid #bddcff;
+  border-radius: 10px;
+}
+
+.prediction-result {
+  font-weight: bold;
+  color: #164a8c;
+}
+
+/* Responsive Anpassungen für Mobilgeräte */
+@media (max-width: 640px) {
+  .container {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  form, button, input[type="text"] {
+    padding: 12px;
+  }
+}

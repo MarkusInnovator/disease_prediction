@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import pandas as pd
 from pydantic import BaseModel
 import joblib
 import numpy as np
@@ -59,3 +60,12 @@ def predictDisease(symptoms: list[str]):
 async def predict(input_data: SymptomsInput):
     result = predictDisease(input_data.symptoms)
     return result
+
+
+# ✅ API endpoint to get symptoms from Testing.csv
+@app.get("/symptoms")
+async def get_symptoms():
+    # Reading the test data
+    test_data = pd.read_csv("dataset/Testing.csv").dropna(axis=1)
+    symptoms = test_data.columns[:-1].tolist()  # Exclude the last column which is the target
+    return {"symptoms": symptoms}
